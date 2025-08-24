@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Cumpleaños Mi amor ❤</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', cursive;
+      background: url('snoopy-fondo.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.6);
+      padding: 30px;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 3em;
+      margin-top: 20px;
+      color: #ff99cc;
+      text-shadow: 2px 2px 6px #000;
+    }
+    p {
+      font-size: 1.4em;
+      max-width: 750px;
+      margin: auto;
+      line-height: 1.8;
+    }
+    .gallery {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .gallery img {
+      width: 220px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .heart {
+      position: absolute;
+      color: #ff3366;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>🎉 Feliz Cumpleaños Valeria ❤</h1>
+    <p>
+      Hoy es un día tan especial como tú, mi amor.  
+      No solo celebro tu cumpleaños, también celebro cada instante que comparto contigo.  
+      Eres la razón de mi sonrisa, mi refugio, mi inspiración y la dueña de mi corazón. 💕  
+      Gracias por ser mi alegría, mi paz y mi mayor regalo.  
+      Deseo que hoy y siempre la vida te dé tanta felicidad como la que me das tú cada día.  
+      Te amo más allá de las palabras, más allá del tiempo. 🌹✨  
+      ¡Feliz cumpleaños, mi niña hermosa! 💖  
+    </p>
+
+    <div class="gallery">
+      <img src="foto1.jpg" alt="Recuerdo 1">
+      <img src="foto2.jpg" alt="Recuerdo 2">
+      <img src="foto3.jpg" alt="Recuerdo 3">
+    </div>
+  </div>
+
+  <div class="hearts"></div>
+
+  <script>
+    function createHeart(){
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+      document.querySelector('.hearts').appendChild(heart);
+      setTimeout(()=>heart.remove(),6000);
+    }
+    setInterval(createHeart, 400);
+  </script>
+</body>
+</html>
